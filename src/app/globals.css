@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.bp-grid {
+  background-image:
+    linear-gradient(rgba(91, 135, 181, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 135, 181, 0.14) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bp-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: bp-draw-in 2.2s ease-out forwards;
+}
+@keyframes bp-draw-in { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .bp-draw { animation: none; stroke-dashoffset: 0; }
+}
