@@ -11,7 +11,26 @@
   stroke-dashoffset: 1000;
   animation: bp-draw-in 2.2s ease-out forwards;
 }
+
+.bp-grid-faint {
+  background-image:
+    linear-gradient(rgba(91, 135, 181, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 135, 181, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+
 @keyframes bp-draw-in { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) {
   .bp-draw { animation: none; stroke-dashoffset: 0; }
+}
+
+
+
+@keyframes bp-spin { to { transform: rotate(360deg); } }
+.bp-spin-slow { transform-box: fill-box; transform-origin: center; animation: bp-spin 40s linear infinite; }
+@keyframes bp-pulse { 0%,100% { opacity: 0.35; } 50% { opacity: 0.65; } }
+.bp-pulse { animation: bp-pulse 3.5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bp-spin-slow, .bp-pulse { animation: none; }
 }
